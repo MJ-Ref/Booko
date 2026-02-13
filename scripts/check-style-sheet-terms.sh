@@ -7,7 +7,6 @@ set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 STYLE_SHEET="$REPO_ROOT/docs/book/STYLE_SHEET.md"
-CHAPTERS_DIR="$REPO_ROOT/manuscript/chapters"
 
 PASS=0
 FAIL=0
@@ -22,11 +21,6 @@ echo ""
 if [[ ! -f "$STYLE_SHEET" ]]; then
   echo "  ⚠ docs/book/STYLE_SHEET.md not found — skipping term check"
   echo "  (Create the style sheet and add a '## Forbidden Patterns' section)"
-  exit 0
-fi
-
-if [[ ! -d "$CHAPTERS_DIR" ]]; then
-  echo "  ⚠ No chapters directory — nothing to check"
   exit 0
 fi
 
@@ -66,56 +60,74 @@ for term in "${FORBIDDEN[@]}"; do
 done
 echo ""
 
-# Check each chapter file for forbidden terms
+# Check each chapter file across all books for forbidden terms
 echo "Scanning chapters:"
-while IFS= read -r file; do
-  rel_path="${file#$REPO_ROOT/}"
-  ch_name=$(basename "$file" .md)
-  file_clean=true
+for book_dir in "$REPO_ROOT"/books/book-*/; do
+  [[ -d "$book_dir" ]] || continue
+  book_name=$(basename "$book_dir")
+  CHAPTERS_DIR="$book_dir/manuscript/chapters"
 
-  for term in "${FORBIDDEN[@]}"; do
-    # Case-insensitive search, word boundary where possible
-    matches=$(grep -in "$term" "$file" | grep -v "^[0-9]*:<!--" || true)
-    if [[ -n "$matches" ]]; then
-      file_clean=false
-      match_count=$(echo "$matches" | wc -l | tr -d ' ')
-      FAIL=$((FAIL + 1))
-      ERRORS+=("$rel_path — forbidden term '$term' found ($match_count occurrences)")
-      echo "  ✗ $ch_name — '$term' found ($match_count times)"
+  [[ -d "$CHAPTERS_DIR" ]] || continue
+
+  echo "  --- $book_name ---"
+  while IFS= read -r file; do
+    rel_path="${file#$REPO_ROOT/}"
+    ch_name=$(basename "$file" .md)
+    file_clean=true
+
+    for term in "${FORBIDDEN[@]}"; do
+      # Case-insensitive search, word boundary where possible
+      matches=$(grep -in "$term" "$file" | grep -v "^[0-9]*:<!--" || true)
+      if [[ -n "$matches" ]]; then
+        file_clean=false
+        match_count=$(echo "$matches" | wc -l | tr -d ' ')
+        FAIL=$((FAIL + 1))
+        ERRORS+=("$rel_path — forbidden term '$term' found ($match_count occurrences)")
+        echo "    ✗ $ch_name — '$term' found ($match_count times)"
+      fi
+    done
+
+    if $file_clean; then
+      PASS=$((PASS + 1))
+      echo "    ✓ $ch_name — clean"
     fi
-  done
 
-  if $file_clean; then
-    PASS=$((PASS + 1))
-    echo "  ✓ $ch_name — clean"
-  fi
-
-done < <(find "$CHAPTERS_DIR" -name "CH-*.md" -type f | sort)
+  done < <(find "$CHAPTERS_DIR" -name "CH-*.md" -type f | sort)
+done
 
 # Also check for TODO/TK/citation-needed markers
 echo ""
 echo "Marker scan (TODO, TK, citation-needed):"
-while IFS= read -r file; do
-  rel_path="${file#$REPO_ROOT/}"
-  ch_name=$(basename "$file" .md)
-  status=$(grep -o '<!-- status: [^-]* -->' "$file" | sed 's/<!-- status: //;s/ -->//' | head -1 || echo "unknown")
+for book_dir in "$REPO_ROOT"/books/book-*/; do
+  [[ -d "$book_dir" ]] || continue
+  book_name=$(basename "$book_dir")
+  CHAPTERS_DIR="$book_dir/manuscript/chapters"
 
-  for marker in "TODO" "TK" "citation.needed"; do
-    matches=$(grep -in "$marker" "$file" | grep -v "^[0-9]*:<!-- status:" || true)
-    if [[ -n "$matches" ]]; then
-      match_count=$(echo "$matches" | wc -l | tr -d ' ')
-      if [[ "$status" == "Draft" ]]; then
-        WARN=$((WARN + 1))
-        WARNINGS+=("$rel_path — '$marker' marker ($match_count) in Draft chapter (acceptable)")
-        echo "  ⚠ $ch_name — '$marker' ($match_count times, Draft status — OK for now)"
-      else
-        FAIL=$((FAIL + 1))
-        ERRORS+=("$rel_path — '$marker' marker ($match_count) in $status chapter (must resolve)")
-        echo "  ✗ $ch_name — '$marker' ($match_count times, status: $status — must resolve)"
+  [[ -d "$CHAPTERS_DIR" ]] || continue
+
+  echo "  --- $book_name ---"
+  while IFS= read -r file; do
+    rel_path="${file#$REPO_ROOT/}"
+    ch_name=$(basename "$file" .md)
+    status=$(grep -o '<!-- status: [^-]* -->' "$file" | sed 's/<!-- status: //;s/ -->//' | head -1 || echo "unknown")
+
+    for marker in "TODO" "TK" "citation.needed"; do
+      matches=$(grep -in "$marker" "$file" | grep -v "^[0-9]*:<!-- status:" || true)
+      if [[ -n "$matches" ]]; then
+        match_count=$(echo "$matches" | wc -l | tr -d ' ')
+        if [[ "$status" == "Draft" ]]; then
+          WARN=$((WARN + 1))
+          WARNINGS+=("$rel_path — '$marker' marker ($match_count) in Draft chapter (acceptable)")
+          echo "    ⚠ $ch_name — '$marker' ($match_count times, Draft status — OK for now)"
+        else
+          FAIL=$((FAIL + 1))
+          ERRORS+=("$rel_path — '$marker' marker ($match_count) in $status chapter (must resolve)")
+          echo "    ✗ $ch_name — '$marker' ($match_count times, status: $status — must resolve)"
+        fi
       fi
-    fi
-  done
-done < <(find "$CHAPTERS_DIR" -name "CH-*.md" -type f | sort)
+    done
+  done < <(find "$CHAPTERS_DIR" -name "CH-*.md" -type f | sort)
+done
 
 # Summary
 echo ""

@@ -40,8 +40,8 @@ Read these documents before starting a drafting session:
    with a YAML front-matter block including at minimum: `title`, `status`
    (Draft), `word_count`, `date_drafted`, and `outline_ref`.
 
-7. **Update `manuscript/_INDEX.md`.** Add the new chapter entry with its file
-   path and status.
+7. **Update the book's `manuscript/_INDEX.md`.** Add the new chapter entry with its file
+   path and status (e.g., `books/book-01/manuscript/_INDEX.md`).
 
 8. **Update session handoff.** Record what was accomplished, open threads for
    the next session, and any emerging editorial debt.
@@ -57,8 +57,8 @@ Read these documents before starting a drafting session:
 
 | Artifact | Location | State |
 |----------|----------|-------|
-| Chapter draft | `manuscript/ch-NN.md` | Status: Draft |
-| Updated index | `manuscript/_INDEX.md` | Current |
+| Chapter draft | `books/book-NN/manuscript/chapters/CH-NN.md` | Status: Draft |
+| Updated index | `books/book-NN/manuscript/_INDEX.md` | Current |
 | Session handoff | `docs/handoff/SESSION_HANDOFF.md` | Current |
 | EDRs (if any) | `docs/decisions/EDR/` | Status: Draft |
 | Editorial debt items | `docs/quality/EDITORIAL_DEBT_REGISTER.md` | Logged |
@@ -68,7 +68,7 @@ Read these documents before starting a drafting session:
 - [ ] Chapter file exists with correct metadata header
 - [ ] All outline contract points for this chapter are addressed (even if rough)
 - [ ] No untagged claims — every uncertain fact uses `<!-- CLAIM: ... -->`
-- [ ] `manuscript/_INDEX.md` reflects the new chapter
+- [ ] The book's `manuscript/_INDEX.md` reflects the new chapter
 - [ ] Session handoff is current
 - [ ] No style or structural changes made without an EDR
 

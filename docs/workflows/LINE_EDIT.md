@@ -54,7 +54,7 @@ deliberate style.
 
 | Artifact | Location | State |
 |----------|----------|-------|
-| Line-edited chapter | `manuscript/ch-NN.md` | Status: Line-Edited |
+| Line-edited chapter | `books/book-NN/manuscript/chapters/CH-NN.md` | Status: Line-Edited |
 | Style sheet updates | `docs/style/STYLE_SHEET.md` | Updated if recurring issues found |
 | Editorial debt items | `docs/quality/EDITORIAL_DEBT_REGISTER.md` | Logged |
 

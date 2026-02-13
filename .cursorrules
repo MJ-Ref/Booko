@@ -8,10 +8,11 @@ Book project managed by the Book_Map system. Route to docs/ for details.
 
 - docs/_INDEX.md — master navigation
 - docs/book/OVERVIEW.md — book purpose and audience
-- docs/book/OUTLINE.md — chapter contracts
-- docs/book/VOICE_GUIDE.md — voice and tone rules
-- docs/book/STYLE_SHEET.md — canonical terms and formatting
-- manuscript/_INDEX.md — chapter status table
+- books/book-01/docs/book/OUTLINE.md — chapter contracts (per-book)
+- docs/book/VOICE_GUIDE.md — voice and tone rules (series-wide)
+- docs/book/STYLE_SHEET.md — canonical terms and formatting (series-wide)
+- books/_INDEX.md — series book status table
+- series/SERIES_OVERVIEW.md — series overview and arc
 - docs/session/SESSION_HANDOFF.md — session continuity
 - docs/agent-guide/ONBOARDING.md — first-time orientation
 

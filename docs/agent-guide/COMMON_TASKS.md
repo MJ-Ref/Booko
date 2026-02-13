@@ -10,7 +10,7 @@
 
 | Task | Key Files Involved |
 |---|---|
-| [Draft a Chapter from Outline Contract](#1-draft-a-chapter-from-outline-contract) | `docs/book/OUTLINE.md`, `docs/book/VOICE_GUIDE.md`, chapter file, `manuscript/_INDEX.md` |
+| [Draft a Chapter from Outline Contract](#1-draft-a-chapter-from-outline-contract) | `books/book-NN/docs/book/OUTLINE.md`, `docs/book/VOICE_GUIDE.md`, chapter file, `books/book-NN/manuscript/_INDEX.md` |
 | [Perform a Developmental Edit](#2-perform-a-developmental-edit) | Chapter file, `docs/book/OUTLINE.md`, `docs/quality/SCORECARD.md`, `docs/quality/DEBT_REGISTER.md` |
 | [Perform a Line Edit](#3-perform-a-line-edit) | Chapter file, `docs/book/VOICE_GUIDE.md`, `docs/quality/SCORECARD.md` |
 | [Perform a Copy Edit](#4-perform-a-copy-edit) | Chapter file, `docs/book/VOICE_GUIDE.md`, `docs/quality/DEBT_REGISTER.md` |
@@ -27,10 +27,10 @@
 
 **Role:** Lead Author Agent
 
-1. **Read the outline contract** for the target chapter in `docs/book/OUTLINE.md`. Note the chapter's objectives, key beats, argument points, required scenes, and acceptance criteria.
+1. **Read the outline contract** for the target chapter in `books/book-NN/docs/book/OUTLINE.md`. Note the chapter's objectives, key beats, argument points, required scenes, and acceptance criteria.
 2. **Read `docs/book/VOICE_GUIDE.md`** to internalize tone, register, POV, and style rules.
-3. **Read any relevant world/character/theme docs** referenced by the outline contract (`docs/book/CHARACTERS.md`, `docs/book/WORLD.md`, `docs/book/THEMES.md`).
-4. **Create the chapter file** at `manuscript/chapters/CH-XX.md` using the metadata header format:
+3. **Read any relevant series docs** (`series/CHARACTERS.md`, `series/WORLD.md`, `series/THREADS.md`) and the book's continuity bible (`books/book-NN/docs/book/CONTINUITY_BIBLE.md`).
+4. **Create the chapter file** at `books/book-NN/manuscript/chapters/CH-XX.md` using the metadata header format:
    ```
    # CH-XX: [Working Title]
    <!-- status: Draft -->
@@ -41,7 +41,7 @@
    ```
 5. **Write the chapter content.** Follow the outline contract's beats in order. Respect voice rules. Mark any uncertain content with `<!-- TK: description -->` or `<!-- TODO: description -->`.
 6. **Self-check against the outline contract.** Verify every required beat or argument point is present.
-7. **Update `manuscript/_INDEX.md`** -- add or update the chapter's row with status `Draft`, word count, and today's date.
+7. **Update the book's `manuscript/_INDEX.md`** -- add or update the chapter's row with status `Draft`, word count, and today's date.
 8. **Update `docs/session/SESSION_HANDOFF.md`** with what you wrote, any TK/TODO markers left, and next steps.
 
 ---
@@ -51,12 +51,12 @@
 **Role:** Developmental Editor Agent
 
 1. **Read `docs/session/SESSION_HANDOFF.md`** to understand current state.
-2. **Read the chapter's outline contract** in `docs/book/OUTLINE.md`. This is your evaluation rubric.
+2. **Read the chapter's outline contract** in the book's `docs/book/OUTLINE.md`. This is your evaluation rubric.
 3. **Read the chapter file** in full. Assess structure, pacing, argument flow, and completeness against the contract.
 4. **Score the chapter** using `docs/quality/SCORECARD.md`. Record scores.
 5. **Make structural edits.** Reorder, add, or remove sections as needed to meet the outline contract. For major structural changes, create an EDR first (see Recipe 6).
 6. **Log any editorial debt** in `docs/quality/DEBT_REGISTER.md` -- items you noticed but did not fix (e.g., fact-check needed, voice drift in a section).
-7. **Update the chapter metadata** -- set status to `Dev-Edited`, update the date. Update `manuscript/_INDEX.md` to match.
+7. **Update the chapter metadata** -- set status to `Dev-Edited`, update the date. Update the book's `manuscript/_INDEX.md` to match.
 
 ---
 
@@ -69,7 +69,7 @@
 3. **Edit line by line.** Improve clarity and flow without changing the chapter's structure or argument. If a structural problem is found, log it in `docs/quality/DEBT_REGISTER.md` and escalate -- do not fix it yourself.
 4. **Verify voice consistency** against the voice guide. Flag deviations.
 5. **Score the chapter** using the line-edit criteria in `docs/quality/SCORECARD.md`.
-6. **Update the chapter metadata** -- set status to `Line-Edited`, update the date. Update `manuscript/_INDEX.md` to match.
+6. **Update the chapter metadata** -- set status to `Line-Edited`, update the date. Update the book's `manuscript/_INDEX.md` to match.
 
 ---
 
@@ -80,9 +80,9 @@
 1. **Read `docs/book/VOICE_GUIDE.md`** for style sheet rules (spelling preferences, formatting conventions, terminology).
 2. **Read the chapter file** in full. Focus on grammar, punctuation, spelling, formatting consistency, and factual consistency.
 3. **Fix mechanical errors.** Correct grammar, punctuation, and spelling. Normalize formatting to match the style sheet. Do not change meaning or voice.
-4. **Check internal consistency.** Verify names, dates, places, and facts are consistent with `docs/book/CHARACTERS.md`, `docs/book/WORLD.md`, and previous chapters.
-5. **Remove or resolve TK/TODO markers** where possible. Log any that require author input in `docs/quality/DEBT_REGISTER.md`.
-6. **Update the chapter metadata** -- set status to `Copy-Edited`, update the date. Update `manuscript/_INDEX.md` to match.
+4. **Check internal consistency.** Verify names, dates, places, and facts are consistent with `series/CHARACTERS.md`, `series/WORLD.md`, the book's `CONTINUITY_BIBLE.md`, and previous chapters.
+5. **Remove or resolve TK/TODO markers** where possible. Log any that require author input in `docs/quality/EDITORIAL_DEBT_REGISTER.md`.
+6. **Update the chapter metadata** -- set status to `Copy-Edited`, update the date. Update the book's `manuscript/_INDEX.md` to match.
 
 ---
 

@@ -17,14 +17,18 @@ It manages the full lifecycle: from blank page through drafting, developmental e
 ### Repository Structure
 
 ```
-docs/                  Operational truth (how this book is written)
-  book/                Book architecture (premise, outline, voice, style)
+docs/                  Shared operational truth (voice, style, workflows, quality)
+  book/                Shared book architecture (voice, style, glossary, fact model)
   decisions/EDR/       Editorial Decision Records
-  workflows/           Drafting and editing workflows
+  workflows/           Drafting, editing, and series workflows
   quality/             Quality scorecard + editorial debt
   agent-guide/         Agent onboarding, tasks, roles
   session/             Session handoff
-manuscript/            The book content (chapters, front/back matter)
+series/                Series-level continuity (arc, characters, world, threads)
+books/                 Per-book content
+  book-01/
+    manuscript/        Chapters, front/back matter
+    docs/book/         Per-book docs (outline, continuity bible, overview)
 plans/                 Execution plans (temporal, lifecycle-bound)
 scripts/               Validation and enforcement (read-only)
 guide/                 Methodology + craft reference (read-only)
@@ -52,11 +56,13 @@ scripts/check-agent-files.sh          # Entry files route correctly
 scripts/check-manuscript-metadata.sh  # Chapter metadata present
 scripts/check-outline-coverage.sh     # Outline ↔ chapter mapping
 scripts/check-style-sheet-terms.sh    # Forbidden terms flagged
+scripts/check-series-continuity.sh    # Series documents consistent
+scripts/check-thread-resolution.sh    # Plot threads tracked to resolution
 ```
 
 ### Guide
 
-The `guide/` directory contains 12 chapters covering both the Book_Map methodology and book development craft. See [guide/README.md](guide/README.md) for the chapter listing.
+The `guide/` directory contains 13 chapters covering the Book_Map methodology, book development craft, and series management. See [guide/README.md](guide/README.md) for the chapter listing.
 
 ## License
 

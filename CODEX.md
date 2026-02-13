@@ -10,11 +10,12 @@ Route to `docs/` for all operational details. **Do not duplicate content here.**
 | I need to...                        | Go to                                      |
 |-------------------------------------|--------------------------------------------|
 | Understand the book                 | docs/book/OVERVIEW.md                      |
-| See chapter contracts               | docs/book/OUTLINE.md                       |
+| See chapter contracts               | books/book-01/docs/book/OUTLINE.md         |
 | Check voice rules                   | docs/book/VOICE_GUIDE.md                   |
 | Check terms/spelling                | docs/book/STYLE_SHEET.md                   |
 | See all docs                        | docs/_INDEX.md                             |
-| See manuscript status               | manuscript/_INDEX.md                       |
+| See book/series status              | books/_INDEX.md                            |
+| See series overview                 | series/SERIES_OVERVIEW.md                  |
 | Resume from last session            | docs/session/SESSION_HANDOFF.md            |
 | Get oriented                        | docs/agent-guide/ONBOARDING.md             |
 

@@ -53,7 +53,7 @@ should be free of surface errors.
 
 | Artifact | Location | State |
 |----------|----------|-------|
-| Copy-edited chapter | `manuscript/ch-NN.md` | Status: Copy-Edited |
+| Copy-edited chapter | `books/book-NN/manuscript/chapters/CH-NN.md` | Status: Copy-Edited |
 | Style sheet updates | `docs/style/STYLE_SHEET.md` | Updated if new terms found |
 | Continuity flags | `docs/reference/CONTINUITY_BIBLE.md` | Updated if issues found |
 | Editorial debt items | `docs/quality/EDITORIAL_DEBT_REGISTER.md` | Logged |

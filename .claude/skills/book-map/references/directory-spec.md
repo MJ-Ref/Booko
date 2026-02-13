@@ -12,10 +12,16 @@ docs/workflows/
 docs/quality/
 docs/agent-guide/
 docs/session/
-manuscript/
-manuscript/front_matter/
-manuscript/chapters/
-manuscript/back_matter/
+series/
+series/handoffs/
+books/
+books/book-01/
+books/book-01/manuscript/
+books/book-01/manuscript/front_matter/
+books/book-01/manuscript/chapters/
+books/book-01/manuscript/back_matter/
+books/book-01/docs/
+books/book-01/docs/book/
 plans/
 plans/active/
 plans/completed/
@@ -42,24 +48,22 @@ guide/
 | README.md | Human entry point | Yes |
 | .gitignore | Git ignore rules | Yes |
 
-### Docs — Book Architecture (7 files)
+### Docs — Shared Book Architecture (5 files)
 | File | Purpose | Required |
 |------|---------|----------|
 | docs/_INDEX.md | Master navigation | Yes |
-| docs/book/OVERVIEW.md | Book premise and audience | Yes |
-| docs/book/OUTLINE.md | Chapter contracts | Yes |
-| docs/book/VOICE_GUIDE.md | Voice specification | Yes |
-| docs/book/STYLE_SHEET.md | Terms and formatting | Yes |
-| docs/book/GLOSSARY.md | Term definitions | Yes |
+| docs/book/OVERVIEW.md | Series-level book premise and audience | Yes |
+| docs/book/VOICE_GUIDE.md | Voice specification (series-wide) | Yes |
+| docs/book/STYLE_SHEET.md | Terms and formatting (series-wide) | Yes |
+| docs/book/GLOSSARY.md | Term definitions (series-wide) | Yes |
 | docs/book/FACT_MODEL.md | Claim/citation rules | Optional (nonfiction) |
-| docs/book/CONTINUITY_BIBLE.md | Continuity tracking | Optional (fiction/memoir) |
 
 ### Docs — Decisions (1+ files)
 | File | Purpose | Required |
 |------|---------|----------|
 | docs/decisions/EDR/000-template.md | EDR template | Yes |
 
-### Docs — Workflows (7 files)
+### Docs — Workflows (10 files)
 | File | Purpose | Required |
 |------|---------|----------|
 | docs/workflows/AUTHORING.md | Drafting workflow | Yes |
@@ -69,6 +73,9 @@ guide/
 | docs/workflows/FACT_CHECK.md | Fact-check workflow | Optional (nonfiction) |
 | docs/workflows/PRODUCTION.md | Production workflow | Yes |
 | docs/workflows/DOC_GARDENING.md | Doc maintenance | Yes |
+| docs/workflows/SERIES_PLANNING.md | Series arc planning | Yes |
+| docs/workflows/BOOK_HANDOFF.md | Book-to-book transition | Yes |
+| docs/workflows/RETROACTIVE_CHANGE.md | Retroactive continuity changes | Yes |
 
 ### Docs — Quality (2 files)
 | File | Purpose | Required |
@@ -81,17 +88,34 @@ guide/
 |------|---------|----------|
 | docs/agent-guide/ONBOARDING.md | Agent orientation | Yes |
 | docs/agent-guide/COMMON_TASKS.md | Task recipes | Yes |
-| docs/agent-guide/ROLE_CARDS.md | Role definitions | Yes |
+| docs/agent-guide/ROLE_CARDS.md | Role definitions (7 roles) | Yes |
 
 ### Docs — Session (1 file)
 | File | Purpose | Required |
 |------|---------|----------|
 | docs/session/SESSION_HANDOFF.md | Live handoff | Yes |
 
-### Manuscript (1 index + chapters)
+### Series (8+ files)
 | File | Purpose | Required |
 |------|---------|----------|
-| manuscript/_INDEX.md | Status tracking | Yes |
+| series/SERIES_OVERVIEW.md | Series premise, arc, planned books | Yes |
+| series/SERIES_ARC.md | Macro plot structure across books | Yes |
+| series/CHARACTERS.md | Series-wide character tracker | Yes |
+| series/WORLD.md | World-building bible | Yes |
+| series/TIMELINE.md | Master chronological timeline | Yes |
+| series/THREADS.md | Plot thread tracker | Yes |
+| series/READER_KNOWLEDGE.md | Reader knowledge at book boundaries | Yes |
+| series/RETROACTIVE_LOG.md | Retroactive change log | Yes |
+
+### Books (per-book structure)
+| File | Purpose | Required |
+|------|---------|----------|
+| books/_INDEX.md | Series-level book status tracker | Yes |
+| books/book-NN/manuscript/_INDEX.md | Per-book chapter status | Yes (per book) |
+| books/book-NN/docs/_INDEX.md | Per-book doc index | Yes (per book) |
+| books/book-NN/docs/book/OVERVIEW.md | Per-book premise | Yes (per book) |
+| books/book-NN/docs/book/OUTLINE.md | Per-book chapter contracts | Yes (per book) |
+| books/book-NN/docs/book/CONTINUITY_BIBLE.md | Per-book continuity | Optional (fiction/memoir) |
 
 ### Plans (2 files)
 | File | Purpose | Required |
@@ -99,7 +123,7 @@ guide/
 | plans/_INDEX.md | Plan directory | Yes |
 | plans/_TEMPLATE.md | Plan template | Yes |
 
-### Scripts (6 files)
+### Scripts (8 files)
 | File | Purpose | Required |
 |------|---------|----------|
 | scripts/check-structure.sh | Structure validation | Yes |
@@ -108,8 +132,10 @@ guide/
 | scripts/check-manuscript-metadata.sh | Metadata validation | Yes |
 | scripts/check-outline-coverage.sh | Outline coverage | Yes |
 | scripts/check-style-sheet-terms.sh | Term consistency | Yes |
+| scripts/check-series-continuity.sh | Series document consistency | Yes |
+| scripts/check-thread-resolution.sh | Plot thread tracking | Yes |
 
-### Guide (13 files)
+### Guide (14 files)
 | File | Purpose | Required |
 |------|---------|----------|
 | guide/README.md | Guide overview | Yes |
@@ -125,6 +151,7 @@ guide/
 | guide/10-momentum-and-failure-modes.md | Chapter 10 | Yes |
 | guide/11-quality-scorecard.md | Chapter 11 | Yes |
 | guide/12-skills-and-automation.md | Chapter 12 | Yes |
+| guide/13-series-management.md | Chapter 13 | Yes |
 
 ### Skills + Config (6 files)
 | File | Purpose | Required |

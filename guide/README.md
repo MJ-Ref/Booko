@@ -71,12 +71,12 @@ character and argument development, editorial process, and the practical unit of
 work. This is where agents spend most of their reference time during active
 drafting and editing.
 
-### Act III: System (Chapters 9--12)
+### Act III: System (Chapters 9--13)
 
 These chapters cover the operational side: collaboration between author and
-agent, maintaining momentum across a long project, quality assurance, and
-automation. They are most relevant during project planning and when diagnosing
-process problems.
+agent, maintaining momentum across a long project, quality assurance,
+automation, and series management. They are most relevant during project
+planning and when diagnosing process problems.
 
 ---
 
@@ -96,6 +96,7 @@ process problems.
 | 10 | Momentum and Continuity          | Long-project stamina, context recovery           |
 | 11 | Quality and Acceptance           | Criteria, checklists, stage gates                |
 | 12 | Automation and Tooling           | Scripts, templates, validation pipelines         |
+| 13 | Series Management                | Multi-book continuity, threads, handoffs          |
 
 ---
 
@@ -142,7 +143,8 @@ Book_Map/
   docs/       <-- Operational truth. Voice specs, structure specs,
   |               character docs, argument docs. Mutable.
   plans/      <-- Work plans. What to do next. Mutable.
-  manuscript/ <-- The actual book. Mutable.
+  books/      <-- Per-book manuscripts and book-specific docs. Mutable.
+  series/     <-- Series-level continuity documents. Mutable.
   scripts/    <-- Automation. Mutable.
 ```
 
@@ -179,7 +181,7 @@ before beginning work. This takes less than a minute and prevents drift.
 
 ## A Note on Completeness
 
-This guide covers all twelve chapters across three acts. The craft fundamentals
+This guide covers thirteen chapters across three acts. The craft fundamentals
 in Acts I and II and the operational guidance in Act III are stable and
 sufficient for productive book development.
 

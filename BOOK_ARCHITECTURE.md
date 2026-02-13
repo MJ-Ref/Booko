@@ -8,8 +8,9 @@ Short router to architecture details. For the full picture, see [docs/book/OVERV
 
 | Zone          | Purpose                    | Mutable? | Lifecycle              |
 |---------------|----------------------------|----------|------------------------|
-| `docs/`       | Operational truth          | Yes      | Evergreen (maintained) |
-| `manuscript/` | The book content           | Yes      | Stage-gated            |
+| `docs/`       | Operational truth (shared) | Yes      | Evergreen (maintained) |
+| `series/`     | Series-level continuity    | Yes      | Evergreen (cross-book) |
+| `books/`      | Per-book content + docs    | Yes      | Stage-gated            |
 | `plans/`      | Execution artifacts        | Yes      | Temporal (lifecycle)   |
 | `guide/`      | Methodology + craft ref    | No       | Read-only              |
 | `scripts/`    | Validation + enforcement   | Rarely   | Stable                 |
@@ -22,12 +23,13 @@ All agent entry files route to `docs/`. They never duplicate content.
 
 ## Key Architectural Documents
 
-- [docs/book/OVERVIEW.md](docs/book/OVERVIEW.md) — book premise, audience, promise
-- [docs/book/OUTLINE.md](docs/book/OUTLINE.md) — chapter contracts
-- [docs/book/VOICE_GUIDE.md](docs/book/VOICE_GUIDE.md) — voice specification
-- [docs/book/STYLE_SHEET.md](docs/book/STYLE_SHEET.md) — terminology and formatting
+- [series/SERIES_OVERVIEW.md](series/SERIES_OVERVIEW.md) — series premise and arc
+- [books/_INDEX.md](books/_INDEX.md) — book status tracker
+- [books/book-01/docs/book/OUTLINE.md](books/book-01/docs/book/OUTLINE.md) — chapter contracts (per-book)
+- [docs/book/VOICE_GUIDE.md](docs/book/VOICE_GUIDE.md) — voice specification (series-wide)
+- [docs/book/STYLE_SHEET.md](docs/book/STYLE_SHEET.md) — terminology and formatting (series-wide)
 - [docs/decisions/EDR/](docs/decisions/EDR/) — editorial decision records
 
 ## Enforcement
 
-Six validation scripts in `scripts/` enforce structural invariants, doc freshness, manuscript metadata, outline coverage, and style consistency. All are read-only — they report but never modify.
+Eight validation scripts in `scripts/` enforce structural invariants, doc freshness, manuscript metadata, outline coverage, style consistency, series continuity, and thread resolution. All are read-only — they report but never modify.

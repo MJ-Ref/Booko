@@ -10,14 +10,17 @@ This file routes you to the system of record. **Do not duplicate content from do
 | I need to...                        | Go to                                      |
 |-------------------------------------|--------------------------------------------|
 | Understand the book's purpose       | [docs/book/OVERVIEW.md](docs/book/OVERVIEW.md) |
-| See the chapter outline/contracts   | [docs/book/OUTLINE.md](docs/book/OUTLINE.md) |
+| See the chapter outline/contracts   | [books/book-01/docs/book/OUTLINE.md](books/book-01/docs/book/OUTLINE.md) |
 | Check voice and tone rules          | [docs/book/VOICE_GUIDE.md](docs/book/VOICE_GUIDE.md) |
 | Look up canonical terms/spelling    | [docs/book/STYLE_SHEET.md](docs/book/STYLE_SHEET.md) |
 | Look up term definitions            | [docs/book/GLOSSARY.md](docs/book/GLOSSARY.md) |
 | Check fact/citation rules           | [docs/book/FACT_MODEL.md](docs/book/FACT_MODEL.md) |
-| Check continuity (fiction)          | [docs/book/CONTINUITY_BIBLE.md](docs/book/CONTINUITY_BIBLE.md) |
+| Check continuity (per-book)         | [books/book-01/docs/book/CONTINUITY_BIBLE.md](books/book-01/docs/book/CONTINUITY_BIBLE.md) |
 | See all docs at a glance            | [docs/_INDEX.md](docs/_INDEX.md)           |
-| See manuscript status               | [manuscript/_INDEX.md](manuscript/_INDEX.md) |
+| See manuscript status               | [books/_INDEX.md](books/_INDEX.md) (series) or [books/book-01/manuscript/_INDEX.md](books/book-01/manuscript/_INDEX.md) (per-book) |
+| See series overview                 | [series/SERIES_OVERVIEW.md](series/SERIES_OVERVIEW.md) |
+| Track plot threads across books     | [series/THREADS.md](series/THREADS.md)     |
+| Check series continuity             | [series/CHARACTERS.md](series/CHARACTERS.md), [series/TIMELINE.md](series/TIMELINE.md) |
 | See current/past plans              | [plans/_INDEX.md](plans/_INDEX.md)         |
 | Understand my role                  | [docs/agent-guide/ROLE_CARDS.md](docs/agent-guide/ROLE_CARDS.md) |
 | Learn common tasks                  | [docs/agent-guide/COMMON_TASKS.md](docs/agent-guide/COMMON_TASKS.md) |

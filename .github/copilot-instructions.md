@@ -8,7 +8,7 @@ Book project managed by the Book_Map system. All operational truth lives in `doc
 
 - Voice and tone: `docs/book/VOICE_GUIDE.md`
 - Terms and spelling: `docs/book/STYLE_SHEET.md`
-- Chapter contracts: `docs/book/OUTLINE.md`
+- Chapter contracts: `books/book-01/docs/book/OUTLINE.md` (per-book)
 - Formatting conventions: `docs/book/STYLE_SHEET.md`
 
 ## When Generating Content

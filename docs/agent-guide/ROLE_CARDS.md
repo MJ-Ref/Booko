@@ -16,9 +16,9 @@
 - Approve or reject Editorial Decision Records (EDRs)
 
 **Owns:**
-- `docs/book/OVERVIEW.md`
-- `docs/book/OUTLINE.md`
-- `docs/book/VOICE_GUIDE.md`
+- `docs/book/OVERVIEW.md` (series-level), `books/book-NN/docs/book/OVERVIEW.md` (per-book)
+- `books/book-NN/docs/book/OUTLINE.md` (per-book chapter contracts)
+- `docs/book/VOICE_GUIDE.md` (series-wide voice)
 - Final acceptance of all manuscript content
 
 **Cannot Do:**
@@ -168,8 +168,8 @@
 - Run final quality checks before export
 
 **Owns:**
-- `manuscript/front_matter/`
-- `manuscript/back_matter/`
+- `books/book-NN/manuscript/front_matter/`
+- `books/book-NN/manuscript/back_matter/`
 - Export formatting and assembly
 - Final pre-export quality gate
 
@@ -179,7 +179,7 @@
 - Override any editorial role's assessment
 
 **Key Documents:**
-- `manuscript/_INDEX.md`, `manuscript/front_matter/`, `manuscript/back_matter/`
+- `books/book-NN/manuscript/_INDEX.md`, `books/book-NN/manuscript/front_matter/`, `books/book-NN/manuscript/back_matter/`
 - `docs/workflows/PRODUCTION.md`
 - All quality scripts in `scripts/`
 
@@ -187,3 +187,39 @@
 - When a chapter has not completed all required editorial passes but is being requested for export
 - When front/back matter content requires author decisions (e.g., dedication text, acknowledgments)
 - When formatting requirements conflict with the manuscript's structure
+
+---
+
+## 7. Series Continuity Editor Agent
+
+**Responsibilities:**
+- Maintain cross-book continuity across the entire series
+- Own and update all `series/` documents (CHARACTERS, WORLD, TIMELINE, THREADS, READER_KNOWLEDGE)
+- Write book handoff documents (`series/handoffs/BOOK-NN-TO-MM.md`)
+- Review retroactive changes and assess their impact across books
+- Track plot thread resolution and flag dangling threads
+- Verify reader knowledge state at book boundaries
+
+**Owns:**
+- `series/` — all series-level documents
+- `books/_INDEX.md` — series book status tracker
+- Book handoff documents in `series/handoffs/`
+- `series/RETROACTIVE_LOG.md` — retroactive change accountability
+
+**Cannot Do:**
+- Edit manuscript prose (flag issues to the appropriate editor)
+- Change per-book outlines or continuity bibles without Lead Author approval
+- Skip the retroactive change workflow when modifying earlier books
+- Override per-book editorial decisions
+
+**Key Documents:**
+- All files in `series/`
+- `books/_INDEX.md`
+- `docs/workflows/SERIES_PLANNING.md`, `docs/workflows/BOOK_HANDOFF.md`, `docs/workflows/RETROACTIVE_CHANGE.md`
+- Per-book continuity bibles: `books/book-NN/docs/book/CONTINUITY_BIBLE.md`
+
+**When to Escalate:**
+- When a retroactive change would affect a published or Final-status book
+- When plot threads cannot be resolved without restructuring a book's outline
+- When world rules conflict between books and resolution affects the series arc
+- When reader knowledge assumptions are wrong and require significant exposition changes

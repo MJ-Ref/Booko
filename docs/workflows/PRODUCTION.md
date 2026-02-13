@@ -11,8 +11,8 @@ output format(s).
 
 - [ ] All chapters have status **Copy-Edited** (Pass 4 complete) at minimum
 - [ ] Editorial debt register reviewed — no High-impact items remain open
-- [ ] Front matter templates available (`manuscript/front/`)
-- [ ] Back matter templates available (`manuscript/back/`)
+- [ ] Front matter templates available (`books/book-NN/manuscript/front_matter/`)
+- [ ] Back matter templates available (`books/book-NN/manuscript/back_matter/`)
 - [ ] Target output format(s) confirmed (print PDF, EPUB, web, etc.)
 
 ## Workflow Steps
@@ -63,9 +63,9 @@ output format(s).
 
 | Artifact | Location | State |
 |----------|----------|-------|
-| Production-ready manuscript | `manuscript/` | All chapters: Production-Ready |
-| Completed front matter | `manuscript/front/` | Final |
-| Completed back matter | `manuscript/back/` | Final |
+| Production-ready manuscript | `books/book-NN/manuscript/` | All chapters: Production-Ready |
+| Completed front matter | `books/book-NN/manuscript/front_matter/` | Final |
+| Completed back matter | `books/book-NN/manuscript/back_matter/` | Final |
 | Export artifacts | `output/` | Target format(s) |
 
 ## Acceptance Criteria

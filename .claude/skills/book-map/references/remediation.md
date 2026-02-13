@@ -32,15 +32,15 @@ Fixes for common audit failures.
 ```markdown
 <!-- status: Draft -->
 <!-- updated: YYYY-MM-DD -->
-<!-- outline_ref: docs/book/OUTLINE.md#ch-XX -->
+<!-- outline_ref: books/book-NN/docs/book/OUTLINE.md#ch-XX -->
 ```
 
 ## Outline Coverage Gap
 
 **Problem:** Outline declares a chapter but no file exists (or vice versa).
 **Fix:**
-- Missing file: Create `manuscript/chapters/CH-XX.md` with metadata header
-- Missing outline entry: Add chapter contract to `docs/book/OUTLINE.md`
+- Missing file: Create `books/book-NN/manuscript/chapters/CH-XX.md` with metadata header
+- Missing outline entry: Add chapter contract to `books/book-NN/docs/book/OUTLINE.md`
 - Orphan file: Either add to outline or delete the file
 
 ## Forbidden Terms in Manuscript
@@ -52,6 +52,21 @@ Fixes for common audit failures.
 
 **Problem:** Chapters past Draft status still contain TODO, TK, or citation-needed markers.
 **Fix:** Resolve each marker before advancing the chapter's editorial status. If unresolvable, add to EDITORIAL_DEBT_REGISTER.md and set a target pass.
+
+## Missing Series Documents
+
+**Problem:** series/ files missing or incomplete.
+**Fix:** Create the missing file using the templates in the existing series/ files. All series files need freshness tags. At minimum, populate the header and table structure.
+
+## Dangling Plot Threads
+
+**Problem:** series/THREADS.md has threads with no resolution target or that span completed books without resolution.
+**Fix:** Either assign a resolution target (book + chapter) or mark as intentionally unresolved with a note explaining why.
+
+## Missing Book Handoff
+
+**Problem:** A book has Final status but no handoff document exists.
+**Fix:** Create `series/handoffs/BOOK-NN-TO-MM.md` following the handoff template. Populate from the completed book's final state.
 
 ## Missing Plan Index Entry
 

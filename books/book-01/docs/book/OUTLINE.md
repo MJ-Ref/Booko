@@ -55,7 +55,7 @@ Every chapter contract uses this structure:
   - [ ] [Transition element linking to CH-02]
 - **Estimated Word Count:** [e.g., 4,000-5,500]
 - **Dependencies:** None (first chapter)
-- **Manuscript:** `manuscript/ch-01.md` — Status: Not Started
+- **Manuscript:** `../../manuscript/chapters/CH-01.md` — Status: Draft
 
 ---
 
@@ -73,7 +73,7 @@ Every chapter contract uses this structure:
   - [ ] [Exercise or reflection prompt — if applicable]
 - **Estimated Word Count:** [e.g., 5,000-6,500]
 - **Dependencies:** CH-01
-- **Manuscript:** `manuscript/ch-02.md` — Status: Not Started
+- **Manuscript:** `../../manuscript/chapters/CH-02.md` — Status: Draft
 
 ---
 
@@ -89,7 +89,7 @@ Every chapter contract uses this structure:
   - [ ] [Pivot or cliffhanger leading into Part II — if applicable]
 - **Estimated Word Count:** [e.g., 4,500-6,000]
 - **Dependencies:** CH-01, CH-02
-- **Manuscript:** `manuscript/ch-03.md` — Status: Not Started
+- **Manuscript:** `../../manuscript/chapters/CH-03.md` — Status: Draft
 
 ---
 
@@ -109,7 +109,7 @@ Every chapter contract uses this structure:
 
 ## Status Tracking
 
-Full manuscript status is tracked in: [`manuscript/_INDEX.md`](../../manuscript/_INDEX.md)
+Full manuscript status is tracked in: [`manuscript/_INDEX.md`](../../manuscript/_INDEX.md) (relative to this book)
 
 | Chapter | Contract Done | Draft | Revision | Final |
 |---------|:---:|:---:|:---:|:---:|
@@ -123,6 +123,7 @@ Full manuscript status is tracked in: [`manuscript/_INDEX.md`](../../manuscript/
 
 | Document                          | Purpose                              |
 |-----------------------------------|--------------------------------------|
-| [OVERVIEW.md](OVERVIEW.md)       | Book identity and scope              |
-| [VOICE_GUIDE.md](VOICE_GUIDE.md) | Voice specification                  |
-| [STYLE_SHEET.md](STYLE_SHEET.md) | Formatting and usage rules           |
+| [OVERVIEW.md](OVERVIEW.md)       | Book-specific identity and scope     |
+| [VOICE_GUIDE.md](../../../../docs/book/VOICE_GUIDE.md) | Voice specification (series-wide) |
+| [STYLE_SHEET.md](../../../../docs/book/STYLE_SHEET.md) | Formatting and usage rules (series-wide) |
+| [SERIES_ARC.md](../../../../series/SERIES_ARC.md) | Where this book fits the series |
