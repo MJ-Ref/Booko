@@ -47,7 +47,7 @@
 **Owns:**
 - Structural integrity of each chapter
 - Pacing and argument flow assessments
-- Developmental scores in `docs/quality/SCORECARD.md`
+- Developmental scores in `docs/quality/QUALITY_SCORECARD.md`
 
 **Cannot Do:**
 - Change the outline contract (must propose changes via EDR to the Lead Author Agent)
@@ -55,8 +55,8 @@
 - Change the book's voice or stylistic register
 
 **Key Documents:**
-- `docs/book/OUTLINE.md`, `docs/quality/SCORECARD.md`
-- `docs/workflows/DEV_EDIT.md`
+- `docs/book/OUTLINE.md`, `docs/quality/QUALITY_SCORECARD.md`
+- `docs/workflows/REVISION.md`
 - `docs/agent-guide/COMMON_TASKS.md` -- Recipe 2 (Developmental Edit)
 
 **When to Escalate:**
@@ -77,7 +77,7 @@
 **Owns:**
 - Sentence-level quality of each chapter
 - Voice consistency assessments
-- Line-edit scores in `docs/quality/SCORECARD.md`
+- Line-edit scores in `docs/quality/QUALITY_SCORECARD.md`
 
 **Cannot Do:**
 - Change chapter structure (reorder sections, add/remove scenes or arguments) -- escalate to Developmental Editor
@@ -85,7 +85,7 @@
 - Override voice rules established in `docs/book/VOICE_GUIDE.md` without an EDR
 
 **Key Documents:**
-- `docs/book/VOICE_GUIDE.md`, `docs/quality/SCORECARD.md`
+- `docs/book/VOICE_GUIDE.md`, `docs/quality/QUALITY_SCORECARD.md`
 - `docs/workflows/LINE_EDIT.md`
 - `docs/agent-guide/COMMON_TASKS.md` -- Recipe 3 (Line Edit)
 
@@ -117,7 +117,7 @@
 - Make judgment calls on ambiguous facts (escalate to Research/Fact Checker)
 
 **Key Documents:**
-- `docs/book/VOICE_GUIDE.md` (style sheet section), `docs/book/CHARACTERS.md`, `docs/book/WORLD.md`
+- `docs/book/VOICE_GUIDE.md` (style sheet section), `series/CHARACTERS.md`, `series/WORLD.md`
 - `docs/workflows/COPY_EDIT.md`
 - `docs/agent-guide/COMMON_TASKS.md` -- Recipe 4 (Copy Edit)
 
@@ -133,12 +133,12 @@
 **Responsibilities:**
 - Verify factual claims in the manuscript against sources
 - Tag claims with source references and confidence levels
-- Maintain the citation index in `docs/book/RESEARCH.md`
+- Maintain factual accuracy per `docs/book/FACT_MODEL.md`
 - Identify unsupported claims and log them as editorial debt
 - Verify quotations, statistics, dates, and proper nouns
 
 **Owns:**
-- `docs/book/RESEARCH.md`
+- `docs/book/FACT_MODEL.md`
 - Factual accuracy assessments
 - Source quality evaluations
 
@@ -148,7 +148,7 @@
 - Remove claims -- only flag them as unsupported or incorrect
 
 **Key Documents:**
-- `docs/book/RESEARCH.md`, `docs/quality/DEBT_REGISTER.md`
+- `docs/book/FACT_MODEL.md`, `docs/quality/EDITORIAL_DEBT_REGISTER.md`
 - `docs/workflows/FACT_CHECK.md`
 
 **When to Escalate:**

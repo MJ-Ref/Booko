@@ -108,7 +108,7 @@ For major characters, expand with:
 | CI-01 | [e.g., "Character B's eye color changes"]        | CH-02, CH-07      | Open        | [Pending — check both chapters]|
 | CI-02 | [e.g., "Timeline gap: 3 days unaccounted for"]   | CH-04, CH-05      | Open        | [Needs bridging scene or note] |
 
-See: [EDITORIAL_DEBT_REGISTER.md](../EDITORIAL_DEBT_REGISTER.md) for full issue tracking.
+See: [EDITORIAL_DEBT_REGISTER.md](../../../../docs/quality/EDITORIAL_DEBT_REGISTER.md) for full issue tracking.
 
 ---
 

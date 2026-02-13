@@ -120,7 +120,7 @@ author feedback) with clear scope, inputs, and acceptance criteria.
 
 Key property: Plans are **consumed and completed**. A plan is created, executed,
 and marked done. They are the mechanism by which the system converts craft
-decisions (in `docs/`) into manuscript progress (in `manuscript/`).
+decisions (in `docs/`) into manuscript progress (in `books/`).
 
 ### Entry Files and Routing
 

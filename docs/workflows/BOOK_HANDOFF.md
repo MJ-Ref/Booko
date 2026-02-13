@@ -38,8 +38,8 @@ hand off what is not yet settled.
 Lock the continuity bible for the completed book. From this point forward,
 changes to the completed book's facts require the Retroactive Change workflow.
 
-- [ ] Copy `docs/continuity-bible.md` to `books/book-NN/CONTINUITY_BIBLE.md`
-      (frozen snapshot)
+- [ ] Copy `books/book-NN/docs/book/CONTINUITY_BIBLE.md` to a frozen snapshot
+      (e.g., append `<!-- FROZEN -->` header)
 - [ ] Mark the frozen copy with a header:
       `<!-- FROZEN: Book NN — changes require RETROACTIVE_CHANGE workflow -->`
 - [ ] Record the freeze date and the manuscript version (commit hash or version
@@ -155,24 +155,15 @@ layout.
 books/book-MM/
 ├── manuscript/
 │   ├── _INDEX.md
-│   └── front/
-│       └── ...
-├── docs/
-│   ├── voice-spec.md          (copied from series voice, book-specific overrides)
-│   ├── structure-spec.md      (new for this book)
-│   ├── editorial-tracker.md   (fresh)
-│   ├── continuity-bible.md    (initialized from series state)
-│   ├── outline/
-│   │   └── OUTLINE_CONTRACT.md
-│   ├── handoff/
-│   │   └── SESSION_HANDOFF.md
-│   ├── decisions/
-│   │   └── EDR/
-│   ├── quality/
-│   │   └── EDITORIAL_DEBT_REGISTER.md
-│   └── parking-lot/
-│       └── IDEAS.md
-└── plans/
+│   ├── chapters/
+│   ├── front_matter/
+│   └── back_matter/
+└── docs/
+    ├── _INDEX.md
+    └── book/
+        ├── OVERVIEW.md              (book-specific premise and series fit)
+        ├── OUTLINE.md               (chapter contracts for this book)
+        └── CONTINUITY_BIBLE.md      (initialized from series state)
 ```
 
 - [ ] All directories created
@@ -185,7 +176,7 @@ books/book-MM/
 Create the next book's overview document. This is not the full structure spec —
 it is the bridge document that explains how this book fits the series.
 
-In `books/book-MM/docs/BOOK_OVERVIEW.md`:
+In `books/book-MM/docs/book/OVERVIEW.md`:
 
 - [ ] **Book's question:** The specific question this book poses and answers
 - [ ] **Book's promise:** What the reader will experience in this installment
@@ -199,8 +190,8 @@ In `books/book-MM/docs/BOOK_OVERVIEW.md`:
 
 ### 8. Write Next Book's OUTLINE
 
-Create the outline contract for the new book in
-`books/book-MM/docs/outline/OUTLINE_CONTRACT.md`.
+Create the outline for the new book in
+`books/book-MM/docs/book/OUTLINE.md`.
 
 For each chapter:
 
@@ -217,7 +208,7 @@ maintains its trajectory toward the series-level resolution.
 ### 9. Initialize Continuity Bible
 
 Create the new book's continuity bible in
-`books/book-MM/docs/continuity-bible.md`.
+`books/book-MM/docs/book/CONTINUITY_BIBLE.md`.
 
 - [ ] Copy all active facts from the completed book's frozen continuity bible
 - [ ] Copy current character states from `series/CHARACTERS.md`
@@ -253,7 +244,7 @@ Review checklist:
 
 | Artifact | Location | State |
 |----------|----------|-------|
-| Frozen continuity bible | `books/book-NN/CONTINUITY_BIBLE.md` | Frozen |
+| Frozen continuity bible | `books/book-NN/docs/book/CONTINUITY_BIBLE.md` | Frozen |
 | Handoff document | `series/handoffs/BOOK-NN-TO-MM.md` | Current |
 | Updated series characters | `series/CHARACTERS.md` | Current |
 | Updated series world | `series/WORLD.md` | Current |
@@ -261,9 +252,9 @@ Review checklist:
 | Updated series threads | `series/THREADS.md` | Current |
 | Updated reader knowledge | `series/READER_KNOWLEDGE.md` | Current |
 | Next book scaffold | `books/book-MM/` | Scaffolded |
-| Next book overview | `books/book-MM/docs/BOOK_OVERVIEW.md` | Current |
-| Next book outline | `books/book-MM/docs/outline/OUTLINE_CONTRACT.md` | Current |
-| Next book continuity bible | `books/book-MM/docs/continuity-bible.md` | Initialized |
+| Next book overview | `books/book-MM/docs/book/OVERVIEW.md` | Current |
+| Next book outline | `books/book-MM/docs/book/OUTLINE.md` | Current |
+| Next book continuity bible | `books/book-MM/docs/book/CONTINUITY_BIBLE.md` | Initialized |
 
 ## Acceptance Criteria
 

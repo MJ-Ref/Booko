@@ -109,7 +109,7 @@ for book_dir in "$REPO_ROOT"/books/book-*/; do
   while IFS= read -r file; do
     rel_path="${file#$REPO_ROOT/}"
     ch_name=$(basename "$file" .md)
-    status=$(grep -o '<!-- status: [^-]* -->' "$file" | sed 's/<!-- status: //;s/ -->//' | head -1 || echo "unknown")
+    status=$(grep -o '<!-- status: [A-Za-z-]* -->' "$file" | sed 's/<!-- status: //;s/ -->//' | head -1 || echo "unknown")
 
     for marker in "TODO" "TK" "citation.needed"; do
       matches=$(grep -in "$marker" "$file" | grep -v "^[0-9]*:<!-- status:" || true)

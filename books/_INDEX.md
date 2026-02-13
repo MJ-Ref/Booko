@@ -30,7 +30,8 @@ Books progress through these statuses sequentially:
 4. **Line-Edited** -- Line edit pass completed (clarity, voice, sentence-level quality)
 5. **Copy-Edited** -- Copy edit pass completed (grammar, formatting, consistency)
 6. **Final** -- All editorial passes complete; accepted by Lead Author Agent
-7. **Published** -- Book is published and available to readers
+7. **Production-Ready** -- Production pass complete (formatting, front/back matter, export)
+8. **Published** -- Book is published and available to readers
 
 ---
 

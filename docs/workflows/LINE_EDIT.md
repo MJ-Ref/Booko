@@ -10,8 +10,8 @@ deliberate style.
 ## Prerequisites
 
 - [ ] Chapter has status **Dev-Edited** (Pass 2 complete)
-- [ ] Voice guide (`docs/voice/VOICE_GUIDE.md`) open for reference
-- [ ] Style sheet (`docs/style/STYLE_SHEET.md`) open for reference
+- [ ] Voice guide (`docs/book/VOICE_GUIDE.md`) open for reference
+- [ ] Style sheet (`docs/book/STYLE_SHEET.md`) open for reference
 - [ ] Any voice-related EDRs reviewed
 
 ## Workflow Steps
@@ -55,7 +55,7 @@ deliberate style.
 | Artifact | Location | State |
 |----------|----------|-------|
 | Line-edited chapter | `books/book-NN/manuscript/chapters/CH-NN.md` | Status: Line-Edited |
-| Style sheet updates | `docs/style/STYLE_SHEET.md` | Updated if recurring issues found |
+| Style sheet updates | `docs/book/STYLE_SHEET.md` | Updated if recurring issues found |
 | Editorial debt items | `docs/quality/EDITORIAL_DEBT_REGISTER.md` | Logged |
 
 ## Acceptance Criteria

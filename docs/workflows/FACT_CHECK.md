@@ -9,10 +9,9 @@ editorial debt.
 
 ## Prerequisites
 
-- [ ] Fact-checking model (`docs/models/FACT_MODEL.md`) reviewed — understand
+- [ ] Fact-checking model (`docs/book/FACT_MODEL.md`) reviewed — understand
       claim categories and verification standards
 - [ ] Chapter contains claim tags: `<!-- CLAIM: ... -->` from drafting pass
-- [ ] Source register (`docs/reference/SOURCE_REGISTER.md`) available
 - [ ] Access to cited sources (links, PDFs, books)
 
 ## Workflow Steps
@@ -59,8 +58,7 @@ editorial debt.
 
 | Artifact | Location | State |
 |----------|----------|-------|
-| Verified chapter | `manuscript/ch-NN.md` | Claim tags resolved |
-| Updated source register | `docs/reference/SOURCE_REGISTER.md` | Current |
+| Verified chapter | `books/book-NN/manuscript/chapters/CH-NN.md` | Claim tags resolved |
 | Editorial debt items | `docs/quality/EDITORIAL_DEBT_REGISTER.md` | Logged for unresolvable claims |
 
 ## Acceptance Criteria

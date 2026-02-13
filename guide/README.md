@@ -19,8 +19,8 @@ human or machine -- can locate the information they need quickly.
 
 This is *read-only reference material*. It does not change during normal
 operation. The living, mutable truth about any specific book project lives in
-`docs/`, `plans/`, and `manuscript/`. This guide tells you *how* to use those
-spaces; the spaces themselves tell you *what* is happening right now.
+`docs/`, `plans/`, `books/`, and `series/`. This guide tells you *how* to use
+those spaces; the spaces themselves tell you *what* is happening right now.
 
 ---
 
@@ -150,7 +150,7 @@ Book_Map/
 
 The guide tells you *how* to create and maintain the documents in `docs/`. It
 tells you *how* to write and execute the plans in `plans/`. It tells you *what
-standards* the prose in `manuscript/` should meet. But the guide itself does not
+standards* the prose in `books/` should meet. But the guide itself does not
 change when those things change.
 
 If you find a conflict between the guide and the operational documents in

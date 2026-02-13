@@ -95,13 +95,13 @@ Expected output format:
 
 ```
 CRITICAL (90+ days):
-  docs/reference/GLOSSARY.md — last reviewed 2025-10-01 (135 days ago)
+  docs/book/GLOSSARY.md — last reviewed 2025-10-01 (135 days ago)
 
 STALE (61-90 days):
-  docs/outline/OUTLINE_CONTRACT.md — last reviewed 2025-11-20 (85 days ago)
+  books/book-01/docs/book/OUTLINE.md — last reviewed 2025-11-20 (85 days ago)
 
 AGING (31-60 days):
-  docs/voice/VOICE_GUIDE.md — last reviewed 2025-12-28 (47 days ago)
+  docs/book/VOICE_GUIDE.md — last reviewed 2025-12-28 (47 days ago)
 
 FRESH (0-30 days):
   docs/workflows/AUTHORING.md — last reviewed 2026-02-01 (12 days ago)

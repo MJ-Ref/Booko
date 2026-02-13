@@ -11,15 +11,15 @@
 | Task | Key Files Involved |
 |---|---|
 | [Draft a Chapter from Outline Contract](#1-draft-a-chapter-from-outline-contract) | `books/book-NN/docs/book/OUTLINE.md`, `docs/book/VOICE_GUIDE.md`, chapter file, `books/book-NN/manuscript/_INDEX.md` |
-| [Perform a Developmental Edit](#2-perform-a-developmental-edit) | Chapter file, `docs/book/OUTLINE.md`, `docs/quality/SCORECARD.md`, `docs/quality/DEBT_REGISTER.md` |
-| [Perform a Line Edit](#3-perform-a-line-edit) | Chapter file, `docs/book/VOICE_GUIDE.md`, `docs/quality/SCORECARD.md` |
-| [Perform a Copy Edit](#4-perform-a-copy-edit) | Chapter file, `docs/book/VOICE_GUIDE.md`, `docs/quality/DEBT_REGISTER.md` |
+| [Perform a Developmental Edit](#2-perform-a-developmental-edit) | Chapter file, `docs/book/OUTLINE.md`, `docs/quality/QUALITY_SCORECARD.md`, `docs/quality/EDITORIAL_DEBT_REGISTER.md` |
+| [Perform a Line Edit](#3-perform-a-line-edit) | Chapter file, `docs/book/VOICE_GUIDE.md`, `docs/quality/QUALITY_SCORECARD.md` |
+| [Perform a Copy Edit](#4-perform-a-copy-edit) | Chapter file, `docs/book/VOICE_GUIDE.md`, `docs/quality/EDITORIAL_DEBT_REGISTER.md` |
 | [Create an Execution Plan](#5-create-an-execution-plan) | `plans/_TEMPLATE.md`, `plans/_INDEX.md` |
 | [Record an Editorial Decision (EDR)](#6-record-an-editorial-decision-edr) | `docs/decisions/_TEMPLATE.md`, `docs/_INDEX.md` |
 | [Update Documentation](#7-update-documentation) | Target doc, `docs/_INDEX.md` |
 | [Run Quality Checks](#8-run-quality-checks) | `scripts/` |
 | [Perform Session Handoff](#9-perform-session-handoff) | `docs/session/SESSION_HANDOFF.md` |
-| [Resolve Editorial Debt Items](#10-resolve-editorial-debt-items) | `docs/quality/DEBT_REGISTER.md`, affected chapter files |
+| [Resolve Editorial Debt Items](#10-resolve-editorial-debt-items) | `docs/quality/EDITORIAL_DEBT_REGISTER.md`, affected chapter files |
 
 ---
 
@@ -53,9 +53,9 @@
 1. **Read `docs/session/SESSION_HANDOFF.md`** to understand current state.
 2. **Read the chapter's outline contract** in the book's `docs/book/OUTLINE.md`. This is your evaluation rubric.
 3. **Read the chapter file** in full. Assess structure, pacing, argument flow, and completeness against the contract.
-4. **Score the chapter** using `docs/quality/SCORECARD.md`. Record scores.
+4. **Score the chapter** using `docs/quality/QUALITY_SCORECARD.md`. Record scores.
 5. **Make structural edits.** Reorder, add, or remove sections as needed to meet the outline contract. For major structural changes, create an EDR first (see Recipe 6).
-6. **Log any editorial debt** in `docs/quality/DEBT_REGISTER.md` -- items you noticed but did not fix (e.g., fact-check needed, voice drift in a section).
+6. **Log any editorial debt** in `docs/quality/EDITORIAL_DEBT_REGISTER.md` -- items you noticed but did not fix (e.g., fact-check needed, voice drift in a section).
 7. **Update the chapter metadata** -- set status to `Dev-Edited`, update the date. Update the book's `manuscript/_INDEX.md` to match.
 
 ---
@@ -66,9 +66,9 @@
 
 1. **Read `docs/book/VOICE_GUIDE.md`** to load voice and style rules.
 2. **Read the chapter file** in full. Focus on sentence-level clarity, rhythm, voice consistency, and readability.
-3. **Edit line by line.** Improve clarity and flow without changing the chapter's structure or argument. If a structural problem is found, log it in `docs/quality/DEBT_REGISTER.md` and escalate -- do not fix it yourself.
+3. **Edit line by line.** Improve clarity and flow without changing the chapter's structure or argument. If a structural problem is found, log it in `docs/quality/EDITORIAL_DEBT_REGISTER.md` and escalate -- do not fix it yourself.
 4. **Verify voice consistency** against the voice guide. Flag deviations.
-5. **Score the chapter** using the line-edit criteria in `docs/quality/SCORECARD.md`.
+5. **Score the chapter** using the line-edit criteria in `docs/quality/QUALITY_SCORECARD.md`.
 6. **Update the chapter metadata** -- set status to `Line-Edited`, update the date. Update the book's `manuscript/_INDEX.md` to match.
 
 ---
@@ -129,12 +129,14 @@ Run these scripts from the repository root as needed:
 
 | Script | Description |
 |---|---|
-| `scripts/check_freshness.sh` | Scans all docs for stale `<!-- reviewed: -->` tags (older than 30 days). Reports which documents need review. |
-| `scripts/check_links.sh` | Validates internal cross-references between documents. Reports broken links. |
-| `scripts/check_todos.sh` | Finds all `TK`, `TODO`, and `FIXME` markers in the manuscript and docs. Reports count and locations. |
-| `scripts/check_status.sh` | Verifies that chapter metadata status matches `manuscript/_INDEX.md`. Reports mismatches. |
-| `scripts/word_count.sh` | Counts words per chapter and total. Compares against target word counts in metadata. |
-| `scripts/check_debt.sh` | Cross-references `docs/quality/DEBT_REGISTER.md` with actual markers in the manuscript. Reports orphaned or unlogged items. |
+| `scripts/check-structure.sh` | Validates that all required files and directories exist. |
+| `scripts/check-doc-freshness.sh` | Scans all docs for stale `<!-- reviewed: -->` tags (older than 30 days). |
+| `scripts/check-agent-files.sh` | Validates agent entry files have required routing tables. |
+| `scripts/check-manuscript-metadata.sh` | Verifies chapter files have required metadata tags and valid statuses. |
+| `scripts/check-outline-coverage.sh` | Validates outline-to-chapter mapping and back-links per book. |
+| `scripts/check-style-sheet-terms.sh` | Flags forbidden terms and TODO/TK markers in manuscript chapters. |
+| `scripts/check-series-continuity.sh` | Validates series/ documents, freshness, and cross-book consistency. |
+| `scripts/check-thread-resolution.sh` | Validates THREADS.md sections and thread entry completeness. |
 
 ---
 
@@ -161,8 +163,8 @@ Run these scripts from the repository root as needed:
 
 **Role:** Varies by item type
 
-1. **Read `docs/quality/DEBT_REGISTER.md`** to identify open items. Pick the highest-priority item appropriate to your role.
+1. **Read `docs/quality/EDITORIAL_DEBT_REGISTER.md`** to identify open items. Pick the highest-priority item appropriate to your role.
 2. **Read the affected chapter or document** referenced by the debt item.
 3. **Resolve the item.** Fix the TK/TODO marker, correct the inconsistency, verify the fact, or whatever the item requires.
-4. **Mark the item as resolved** in `docs/quality/DEBT_REGISTER.md` -- update its status and add the resolution date.
+4. **Mark the item as resolved** in `docs/quality/EDITORIAL_DEBT_REGISTER.md` -- update its status and add the resolution date.
 5. **Update `docs/session/SESSION_HANDOFF.md`** to record the resolution.

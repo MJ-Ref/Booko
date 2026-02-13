@@ -24,6 +24,7 @@ Chapters progress through these statuses sequentially:
 3. **Line-Edited** -- Line edit pass completed (clarity, voice, sentence-level quality)
 4. **Copy-Edited** -- Copy edit pass completed (grammar, formatting, consistency)
 5. **Final** -- All editorial passes complete; accepted by Lead Author Agent
+6. **Production-Ready** -- Production pass complete (formatting, front/back matter, export)
 
 ---
 
@@ -42,6 +43,6 @@ Chapters progress through these statuses sequentially:
 
 ## Rules
 
-- **Status must match the chapter file's metadata header.** If the `<!-- status: -->` tag in the chapter file says `Dev-Edited`, this index must also say `Dev-Edited`. Run `scripts/check_status.sh` to verify.
+- **Status must match the chapter file's metadata header.** If the `<!-- status: -->` tag in the chapter file says `Dev-Edited`, this index must also say `Dev-Edited`. Run `scripts/check-manuscript-metadata.sh` to verify.
 - **Workflow gates are sequential.** Chapters advance through statuses in order: Draft -> Dev-Edited -> Line-Edited -> Copy-Edited -> Final. No skipping. A chapter cannot be Line-Edited until it has been Dev-Edited. A chapter cannot be marked Final until it has been Copy-Edited.
 - **Update this index whenever a chapter's status changes.** Every editorial pass that changes a chapter's status must also update this table.

@@ -10,9 +10,9 @@ should be free of surface errors.
 ## Prerequisites
 
 - [ ] Chapter has status **Line-Edited** (Pass 3 complete)
-- [ ] Style sheet (`docs/style/STYLE_SHEET.md`) open for reference
-- [ ] Glossary (`docs/reference/GLOSSARY.md`) open for reference
-- [ ] Continuity bible (`docs/reference/CONTINUITY_BIBLE.md`) open for reference
+- [ ] Style sheet (`docs/book/STYLE_SHEET.md`) open for reference
+- [ ] Glossary (`docs/book/GLOSSARY.md`) open for reference
+- [ ] Continuity bible (`books/book-NN/docs/book/CONTINUITY_BIBLE.md`) open for reference
 - [ ] Any terminology-related EDRs reviewed
 
 ## Workflow Steps
@@ -54,8 +54,8 @@ should be free of surface errors.
 | Artifact | Location | State |
 |----------|----------|-------|
 | Copy-edited chapter | `books/book-NN/manuscript/chapters/CH-NN.md` | Status: Copy-Edited |
-| Style sheet updates | `docs/style/STYLE_SHEET.md` | Updated if new terms found |
-| Continuity flags | `docs/reference/CONTINUITY_BIBLE.md` | Updated if issues found |
+| Style sheet updates | `docs/book/STYLE_SHEET.md` | Updated if new terms found |
+| Continuity flags | `books/book-NN/docs/book/CONTINUITY_BIBLE.md` | Updated if issues found |
 | Editorial debt items | `docs/quality/EDITORIAL_DEBT_REGISTER.md` | Logged |
 
 ## Acceptance Criteria

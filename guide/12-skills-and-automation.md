@@ -70,11 +70,11 @@ project-aware by design.
 **Purpose:** Set up the Book_Map directory structure in a new project.
 
 **What it does:**
-1. Creates the standard directory layout: `docs/`, `plans/`, `manuscript/`,
-   `guide/` (symlink or copy of the Book_Map guide).
-2. Creates template files: `docs/voice-spec.md`, `docs/structure-spec.md`,
-   `docs/editorial-tracker.md`, `docs/session/SESSION_HANDOFF.md`.
-3. Creates the parking lot: `docs/parking-lot/IDEAS.md`.
+1. Creates the standard directory layout: `docs/`, `plans/`, `books/`,
+   `series/`, `guide/` (symlink or copy of the Book_Map guide).
+2. Creates template files: `docs/book/VOICE_GUIDE.md`, `docs/book/STYLE_SHEET.md`,
+   `docs/session/SESSION_HANDOFF.md`, and per-book scaffolding.
+3. Creates the series structure: `series/` with all required tracking documents.
 4. Sets up the editorial debt register: `docs/editorial-debt-register.md`.
 5. Creates the initial chapter plan template in `plans/`.
 6. Verifies the structure is complete and reports any issues.

@@ -82,14 +82,10 @@ and during spot checks.
    dimensions. A chapter must score 3.5 or higher in every dimension relevant
    to the current pass to advance.
 
-2. Record the score in the chapter's metadata header:
-   ```yaml
-   quality_score:
-     architecture: 4
-     voice: 4
-     accuracy: 3
-     production: n/a
-     date: 2026-02-13
+2. Record the score in the chapter's metadata header using HTML comments:
+   ```
+   <!-- quality_score: architecture=4 voice=4 accuracy=3 production=n/a -->
+   <!-- quality_date: 2026-02-13 -->
    ```
 
 3. If any dimension scores below 3.5, log the gap in the editorial debt

@@ -53,7 +53,7 @@ coherence. This pass looks at the chapter as a unit within the whole manuscript
 | Artifact | Location | State |
 |----------|----------|-------|
 | Revised chapter | `books/book-NN/manuscript/chapters/CH-NN.md` | Status: Dev-Edited |
-| Updated outline (if changed) | `docs/outline/OUTLINE_CONTRACT.md` | Current |
+| Updated outline (if changed) | `books/book-NN/docs/book/OUTLINE.md` | Current |
 | EDRs for structural changes | `docs/decisions/EDR/` | Status: Proposed |
 | Editorial debt items | `docs/quality/EDITORIAL_DEBT_REGISTER.md` | Logged |
 

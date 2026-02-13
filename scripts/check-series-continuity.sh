@@ -106,7 +106,10 @@ if [[ -f "$SERIES_ARC" ]]; then
   for book_dir in "$REPO_ROOT"/books/book-*/; do
     [[ -d "$book_dir" ]] || continue
     book_name=$(basename "$book_dir")
-    if grep -qi "$book_name\|book.01\|book 01\|Book 1" "$SERIES_ARC"; then
+    # Extract book number and generate dynamic match alternatives
+    book_num=$(echo "$book_name" | grep -o '[0-9]\+')
+    book_num_nozero=$(echo "$book_num" | sed 's/^0*//')
+    if grep -qi "$book_name\|book.$book_num\|book $book_num\|Book $book_num_nozero" "$SERIES_ARC"; then
       PASS=$((PASS + 1))
       echo "  ✓ $book_name — referenced in SERIES_ARC.md"
     else

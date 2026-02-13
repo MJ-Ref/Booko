@@ -27,7 +27,8 @@ Only after these four steps should you begin work.
 | Zone | Purpose | Mutable? |
 |---|---|---|
 | `docs/` | All project documentation: architecture, decisions, workflows, quality, agent guides, session state | Yes -- update as you work |
-| `manuscript/` | Chapter files, front matter, back matter | Yes -- this is the product |
+| `books/` | Per-book manuscripts, chapters, front/back matter, and book-specific docs | Yes -- this is the product |
+| `series/` | Series-level continuity: characters, world, timeline, threads, reader knowledge | Yes -- update at book boundaries |
 | `plans/` | Execution plans (active and completed) | Yes -- create, update, complete |
 | `guide/` | Stable reference material and style rules provided by the human author | **No** -- read only |
 | `scripts/` | Automation and quality-check scripts | **No** -- read only unless directed |
@@ -88,14 +89,14 @@ Every session follows this cycle:
 
 | I need to... | Go to... |
 |---|---|
-| Understand the book's premise and scope | `docs/book/OVERVIEW.md` |
-| See what chapters exist and their status | `manuscript/_INDEX.md` |
+| Understand the book's premise and scope | `docs/book/OVERVIEW.md` (series) or `books/book-NN/docs/book/OVERVIEW.md` (per-book) |
+| See what chapters exist and their status | `books/book-NN/manuscript/_INDEX.md` |
 | Know the voice and style rules | `docs/book/VOICE_GUIDE.md` |
-| Draft a chapter | `docs/workflows/DRAFTING.md` |
-| Edit a chapter | `docs/workflows/DEV_EDIT.md`, `LINE_EDIT.md`, or `COPY_EDIT.md` |
-| Record a major editorial decision | `docs/decisions/_TEMPLATE.md` |
-| Check quality criteria | `docs/quality/SCORECARD.md` |
-| See what debt items are outstanding | `docs/quality/DEBT_REGISTER.md` |
+| Draft a chapter | `docs/workflows/AUTHORING.md` |
+| Edit a chapter | `docs/workflows/REVISION.md`, `LINE_EDIT.md`, or `COPY_EDIT.md` |
+| Record a major editorial decision | `docs/decisions/EDR/000-template.md` |
+| Check quality criteria | `docs/quality/QUALITY_SCORECARD.md` |
+| See what debt items are outstanding | `docs/quality/EDITORIAL_DEBT_REGISTER.md` |
 | Find or create a plan | `plans/_INDEX.md` |
 | See who does what | `docs/agent-guide/ROLE_CARDS.md` |
 | Learn how to do a specific task | `docs/agent-guide/COMMON_TASKS.md` |

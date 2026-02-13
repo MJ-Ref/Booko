@@ -94,7 +94,7 @@ All of the following must be true for this plan to be marked `Completed`:
 - [ ] No unresolved `<!-- TK: -->` or `<!-- TODO: -->` markers remain in affected files
 - [ ] Voice rules obeyed (verified against `docs/book/VOICE_GUIDE.md`)
 - [ ] Chapter status updated in chapter metadata headers
-- [ ] `manuscript/_INDEX.md` updated to reflect current chapter statuses
+- [ ] `books/book-NN/manuscript/_INDEX.md` updated to reflect current chapter statuses
 - [ ] `docs/session/SESSION_HANDOFF.md` updated with final state
 - [ ] [Add plan-specific success criteria here]
 
@@ -104,5 +104,5 @@ All of the following must be true for this plan to be marked `Completed`:
 
 - [docs/book/OUTLINE.md](../docs/book/OUTLINE.md) -- Outline contracts
 - [docs/book/VOICE_GUIDE.md](../docs/book/VOICE_GUIDE.md) -- Voice and style rules
-- [docs/quality/SCORECARD.md](../docs/quality/SCORECARD.md) -- Quality rubric
+- [docs/quality/QUALITY_SCORECARD.md](../docs/quality/QUALITY_SCORECARD.md) -- Quality rubric
 - [Add additional references as needed]

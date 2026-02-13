@@ -11,11 +11,11 @@ before any revision pass begins.
 
 Read these documents before starting a drafting session:
 
-- [ ] **Voice guide** (`docs/voice/VOICE_GUIDE.md`) — internalize tone and register
-- [ ] **Outline contract** (`docs/outline/OUTLINE_CONTRACT.md`) — know what the chapter must deliver
-- [ ] **Style sheet** (`docs/style/STYLE_SHEET.md`) — avoid known terminology drift
+- [ ] **Voice guide** (`docs/book/VOICE_GUIDE.md`) — internalize tone and register
+- [ ] **Outline contract** (`books/book-NN/docs/book/OUTLINE.md`) — know what the chapter must deliver
+- [ ] **Style sheet** (`docs/book/STYLE_SHEET.md`) — avoid known terminology drift
 - [ ] **Last chapter** — read the final 500-1000 words for continuity and momentum
-- [ ] **Session handoff** (`docs/handoff/SESSION_HANDOFF.md`) — pick up where the last session stopped
+- [ ] **Session handoff** (`docs/session/SESSION_HANDOFF.md`) — pick up where the last session stopped
 
 ## Workflow Steps
 
@@ -37,8 +37,13 @@ Read these documents before starting a drafting session:
    rather than stopping to research.
 
 6. **Add or update the chapter metadata header.** Every chapter file must begin
-   with a YAML front-matter block including at minimum: `title`, `status`
-   (Draft), `word_count`, `date_drafted`, and `outline_ref`.
+   with HTML comment metadata tags including at minimum: `status` (Draft),
+   `updated`, and `outline_ref`. Example:
+   ```
+   <!-- status: Draft -->
+   <!-- updated: YYYY-MM-DD -->
+   <!-- outline_ref: books/book-NN/docs/book/OUTLINE.md#ch-xx -->
+   ```
 
 7. **Update the book's `manuscript/_INDEX.md`.** Add the new chapter entry with its file
    path and status (e.g., `books/book-01/manuscript/_INDEX.md`).
@@ -59,7 +64,7 @@ Read these documents before starting a drafting session:
 |----------|----------|-------|
 | Chapter draft | `books/book-NN/manuscript/chapters/CH-NN.md` | Status: Draft |
 | Updated index | `books/book-NN/manuscript/_INDEX.md` | Current |
-| Session handoff | `docs/handoff/SESSION_HANDOFF.md` | Current |
+| Session handoff | `docs/session/SESSION_HANDOFF.md` | Current |
 | EDRs (if any) | `docs/decisions/EDR/` | Status: Draft |
 | Editorial debt items | `docs/quality/EDITORIAL_DEBT_REGISTER.md` | Logged |
 

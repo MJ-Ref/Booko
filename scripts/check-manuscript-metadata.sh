@@ -52,7 +52,7 @@ for book_dir in "$REPO_ROOT"/books/book-*/; do
       echo "  ✓ $rel_path — all required metadata present"
 
       # Extract and display metadata
-      status=$(grep -o '<!-- status: [^-]* -->' "$file" | sed 's/<!-- status: //;s/ -->//' | head -1)
+      status=$(grep -o '<!-- status: [A-Za-z-]* -->' "$file" | sed 's/<!-- status: //;s/ -->//' | head -1)
       updated=$(grep -o '<!-- updated: [^-]*-[^-]*-[^-]* -->' "$file" | grep -o '[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}' | head -1)
       echo "    status: ${status:-unknown}, updated: ${updated:-unknown}"
     else
@@ -64,10 +64,10 @@ for book_dir in "$REPO_ROOT"/books/book-*/; do
   # Check for valid status values
   echo ""
   echo "  Status validation:"
-  VALID_STATUSES="Draft Dev-Edited Line-Edited Copy-Edited Final"
+  VALID_STATUSES="Draft Dev-Edited Line-Edited Copy-Edited Final Production-Ready"
   while IFS= read -r file; do
     rel_path="${file#$REPO_ROOT/}"
-    status=$(grep -o '<!-- status: [^-]* -->' "$file" | sed 's/<!-- status: //;s/ -->//' | head -1 || true)
+    status=$(grep -o '<!-- status: [A-Za-z-]* -->' "$file" | sed 's/<!-- status: //;s/ -->//' | head -1 || true)
 
     if [[ -n "$status" ]]; then
       found=false
