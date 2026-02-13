@@ -1,0 +1,26 @@
+# Book_Map — Cursor Entry Point
+
+<!-- reviewed: 2026-02-13 -->
+
+Book project managed by the Book_Map system. Route to docs/ for details.
+
+## Key Files
+
+- docs/_INDEX.md — master navigation
+- docs/book/OVERVIEW.md — book purpose and audience
+- docs/book/OUTLINE.md — chapter contracts
+- docs/book/VOICE_GUIDE.md — voice and tone rules
+- docs/book/STYLE_SHEET.md — canonical terms and formatting
+- manuscript/_INDEX.md — chapter status table
+- docs/session/SESSION_HANDOFF.md — session continuity
+- docs/agent-guide/ONBOARDING.md — first-time orientation
+
+## Rules
+
+1. docs/ is the system of record.
+2. guide/ is read-only.
+3. One editorial pass per session.
+4. Update freshness dates (<!-- reviewed: YYYY-MM-DD -->) on docs you touch.
+5. Update session handoff at end of session.
+6. Chapter files need metadata headers (status, updated, outline_ref).
+7. Record irreversible editorial decisions as EDRs in docs/decisions/EDR/.

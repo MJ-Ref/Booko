@@ -1,0 +1,83 @@
+<!-- reviewed: 2026-02-13 -->
+# Authoring Workflow — Pass 1: Drafting
+
+## Purpose
+
+Get ideas down on the page while obeying the outline contract. Speed and
+completeness matter more than polish. Every chapter must exist in rough form
+before any revision pass begins.
+
+## Prerequisites
+
+Read these documents before starting a drafting session:
+
+- [ ] **Voice guide** (`docs/voice/VOICE_GUIDE.md`) — internalize tone and register
+- [ ] **Outline contract** (`docs/outline/OUTLINE_CONTRACT.md`) — know what the chapter must deliver
+- [ ] **Style sheet** (`docs/style/STYLE_SHEET.md`) — avoid known terminology drift
+- [ ] **Last chapter** — read the final 500-1000 words for continuity and momentum
+- [ ] **Session handoff** (`docs/handoff/SESSION_HANDOFF.md`) — pick up where the last session stopped
+
+## Workflow Steps
+
+1. **Read session handoff.** Note open threads, pending decisions, and the
+   target chapter for this session.
+
+2. **Open outline contract for the target chapter.** Confirm the chapter's
+   thesis, required scenes or arguments, and any dependencies on prior chapters.
+
+3. **Review voice guide and style sheet.** Refresh on voice rules, forbidden
+   constructions, and preferred terminology.
+
+4. **Read the last 500-1000 words of the preceding chapter.** Match tone,
+   check for dangling threads that this chapter must pick up, and ensure
+   continuity of setting or argument.
+
+5. **Draft the chapter following the outline contract.** Focus on content, not
+   polish. Write forward. Mark uncertain passages with `<!-- TODO: ... -->`
+   rather than stopping to research.
+
+6. **Add or update the chapter metadata header.** Every chapter file must begin
+   with a YAML front-matter block including at minimum: `title`, `status`
+   (Draft), `word_count`, `date_drafted`, and `outline_ref`.
+
+7. **Update `manuscript/_INDEX.md`.** Add the new chapter entry with its file
+   path and status.
+
+8. **Update session handoff.** Record what was accomplished, open threads for
+   the next session, and any emerging editorial debt.
+
+## Forbidden During Drafting
+
+- **Polishing prose.** Do not rewrite sentences for style. That is Pass 3.
+- **Fact-check deep dives.** Tag claims with `<!-- CLAIM: ... -->` and move on.
+- **Major structural changes.** If the outline feels wrong, file an EDR
+  (`docs/decisions/EDR/`) and continue drafting the current plan.
+
+## Outputs
+
+| Artifact | Location | State |
+|----------|----------|-------|
+| Chapter draft | `manuscript/ch-NN.md` | Status: Draft |
+| Updated index | `manuscript/_INDEX.md` | Current |
+| Session handoff | `docs/handoff/SESSION_HANDOFF.md` | Current |
+| EDRs (if any) | `docs/decisions/EDR/` | Status: Draft |
+| Editorial debt items | `docs/quality/EDITORIAL_DEBT_REGISTER.md` | Logged |
+
+## Acceptance Criteria
+
+- [ ] Chapter file exists with correct metadata header
+- [ ] All outline contract points for this chapter are addressed (even if rough)
+- [ ] No untagged claims — every uncertain fact uses `<!-- CLAIM: ... -->`
+- [ ] `manuscript/_INDEX.md` reflects the new chapter
+- [ ] Session handoff is current
+- [ ] No style or structural changes made without an EDR
+
+## Quality Check
+
+Run the metadata validation script after drafting:
+
+```bash
+scripts/check-manuscript-metadata.sh
+```
+
+Fix any reported errors before closing the session.
